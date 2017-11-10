@@ -58,14 +58,24 @@ public class FractionTests {
 		assertEquals(myFraction3.getDenominator(), 6);
 	}
 	
+	@Test
+	public void testNegativesFraction() {
+		
+		Fraction myFraction = new CandidateFraction(-5, -2);
+		Fraction myFraction2 = new CandidateFraction(2, 3);
+		Fraction myFraction3 = myFraction.add(myFraction2);
+		assertEquals(myFraction3.getNumerator(), 19);
+		assertEquals(myFraction3.getDenominator(), 6);
+	}
+	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 	
 	@Test
 	public void testOverflowFractionTest() {
-		thrown.expect(ArithmeticException.class);
 		Fraction myFraction = new CandidateFraction(-2147483646, 7);
-		Fraction myFraction2 = new CandidateFraction(-13, 3);
+		Fraction myFraction2 = new CandidateFraction(-3, 13);
+		thrown.expect(ArithmeticException.class);
 		Fraction myFraction3 = myFraction.add(myFraction2);
 	}
 
