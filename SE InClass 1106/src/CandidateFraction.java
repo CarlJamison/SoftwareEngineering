@@ -69,9 +69,14 @@ public class CandidateFraction implements Fraction {
 		// this will timeout with a zero numerator
 
 		// find GCD
+		if(denominator < 0){
+			denominator *= -1;
+			numerator *= -1;
+		}
+		
 		int a = Math.abs(numerator);
 		int b = Math.abs(denominator);
-
+		
 		if (a == 0) {
 			denominator = 1;
 		} else {
