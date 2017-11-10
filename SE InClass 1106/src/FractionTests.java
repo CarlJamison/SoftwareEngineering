@@ -15,6 +15,7 @@ public class FractionTests {
 		assertEquals(myFraction3.getNumerator(), 4);
 		assertEquals(myFraction3.getDenominator(), 1);
 	}
+	//random
 	
 	@Test
 	public void testAddTest() {
