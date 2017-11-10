@@ -66,21 +66,24 @@ public class CandidateFraction implements Fraction {
 		//find GCD
 		int a = Math.abs(numerator);
 		int b = Math.abs(denominator);
-	    while (a != b) { 
-	        if (a > b) {
-	           a = a - b; 
-	        }else {
-	           b = b - a; 
-	        }
-	    }
+		
+		if(a == 0) {
+			denominator = 1;
+		}else {
+			while (a != b) { 
+		        if (a > b) {
+		           a = a - b; 
+		        }else {
+		           b = b - a; 
+		        }
+		    }
+		}
 	    
 //	    while (a != 0) {
 //            int temp = a;
 //            a = b % a;
 //            b = temp;
 //        }
-	    
-	    System.out.println("The right file");
 	    
 	    //a is now the GCD
 	    numerator /= a;
