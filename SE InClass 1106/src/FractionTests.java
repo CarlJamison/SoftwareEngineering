@@ -64,8 +64,8 @@ public class FractionTests {
 	@Test
 	public void testOverflowFractionTest() {
 		thrown.expect(ArithmeticException.class);
-		Fraction myFraction = new CandidateFraction(999999999, 276);
-		Fraction myFraction2 = new CandidateFraction(444444444, 34);
+		Fraction myFraction = new CandidateFraction(-2147483646, 7);
+		Fraction myFraction2 = new CandidateFraction(-13, 3);
 		Fraction myFraction3 = myFraction.add(myFraction2);
 	}
 
